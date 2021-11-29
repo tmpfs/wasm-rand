@@ -2,6 +2,8 @@
 
 Demo for generating random values in WASM using `rand` and `getrandom`.
 
+The `main` branch tests using the `0.8` version of `rand` and the `rand-0.6.5` branch tests using `rand@0.6.5` with the `wasm-bindgen` feature enabled.
+
 ## Prerequisites
 
 * `rust@1.54.0`
