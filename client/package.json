@@ -1,0 +1,36 @@
+{
+  "name": "wasm-rand-demo",
+  "version": "0.1.0",
+  "description": "Generate random values in WASM",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmpfs/wasm-rand.git"
+  },
+  "keywords": [
+    "webassembly",
+    "wasm",
+    "rust",
+    "webpack"
+  ],
+  "author": "Muji <muji@tmpfs.org>",
+  "license": "(MIT OR Apache-2.0)",
+  "bugs": {
+    "url": "https://github.com/tmpfs/wasm-rand/issues"
+  },
+  "homepage": "https://github.com/tmpfs/wasm-rand",
+  "dependencies": {
+    "wasm-rand": "file:../wasm/pkg"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.0",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "worker-loader": "^3.0.8"
+  }
+}
