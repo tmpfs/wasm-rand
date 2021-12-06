@@ -7,16 +7,20 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
   },
+  devtool: false,
   mode: "development",
   plugins: [
     new CopyWebpackPlugin(['index.html'])
   ],
-  module: {
-    rules: [
-      {
-        test: /\.worker\.js$/,
-        use: { loader: "worker-loader" },
-      },
-    ],
+  devServer: {
+    headers: {
+      "Cross-Origin-Embedder-Policy": "require-corp",
+      "Cross-Origin-Opener-Policy": "same-origin",
+    },
+  },
+  experiments: {
+    //syncWebAssembly: true,
+    asyncWebAssembly: true,
+    topLevelAwait: true,
   },
 };

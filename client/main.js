@@ -1,8 +1,6 @@
-import Worker from 'worker-loader!./worker.js';
-
 if (window.Worker) {
   // Worker communication.
-  const worker = new Worker('worker.js');
+  const worker = new Worker(new URL("./worker.js", import.meta.url));
   worker.onmessage = (e) => {
     const {value} = e.data;
     console.log('Javascript got random value', value);
