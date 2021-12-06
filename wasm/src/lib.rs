@@ -1,4 +1,5 @@
 use rand::prelude::*;
+use rayon::prelude::*;
 
 #[cfg(target_arch = "wasm32")]
 use wasm_bindgen::prelude::*;
@@ -34,7 +35,11 @@ pub fn start() {
 #[cfg(target_arch = "wasm32")]
 #[wasm_bindgen]
 pub fn thread_rng_random() -> JsValue {
-    let mut rng = rand::thread_rng();
-    let value = rng.gen::<u32>();
-    JsValue::from_serde(&value).unwrap()
+    let values: Vec<u32> = (0..16).into_par_iter()
+        .map(|_| {
+            let mut rng = rand::thread_rng();
+            rng.gen::<u32>()
+        })
+        .collect();
+    JsValue::from_serde(&values).unwrap()
 }

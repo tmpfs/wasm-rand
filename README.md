@@ -1,8 +1,10 @@
 # RNG in WASM
 
-Demo for generating random values in WASM using `rand` and `getrandom`.
+Demo for generating random values in WASM via `Crypto.getRandomValues()` (see [webcrypto](https://github.com/w3c/webcrypto/)).
 
-The `main` branch tests using the `0.8` version of `rand` and the `rand-0.6.5` branch tests using `rand@0.6.5` with the `wasm-bindgen` feature enabled.
+The `main` branch tests using `rand@0.8` with `getrandom@0.2` using multiple threads enabled using [wasm-bindgen-rayon](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon).
+
+For single-threaded versions see the `rand-0.8` and `rand-0.6.5` (older `wasm-bindgen` feature) branches.
 
 ## Prerequisites
 

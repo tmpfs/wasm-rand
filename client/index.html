@@ -14,30 +14,13 @@
       main {
         width: 960px;
       }
-
-      #keygen, #complete {
-        display: none;
-      }
-
-      #progress, #data, #parties-list {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      div, details, p, button {
-        margin: 0 0 0.5em 0;
-      }
-
-      label {
-        display: block;
-      }
     </style>
   </head>
   <body>
     <main>
-      <h1>WASM Random</h1>
-      <p class="value">Random value (u32): <span></span></p>
+      <h1>WASM Random (Multi-threaded)</h1>
+      <p>Random values (u32):</p>
+      <ul class="value"></ul>
     <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
     <script src="./index.js"></script>
   </body>
