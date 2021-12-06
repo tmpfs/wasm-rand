@@ -9,8 +9,7 @@ crate-type = ["cdylib", "rlib"]
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 getrandom = {version = "0.2", features = ["js"]}
 wasm-bindgen = { version = "0.2.76", features = ["serde-serialize"] }
+rayon = "1.5"
+wasm-bindgen-rayon = "1.0"
 rand = "0.8"
 console_error_panic_hook = "0.1.6"
-
-
-
